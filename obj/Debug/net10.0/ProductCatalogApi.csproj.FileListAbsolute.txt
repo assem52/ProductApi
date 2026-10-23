@@ -1,0 +1,8 @@
+/Users/assemelmeligy/Documents/items/0xCode/mercor/task01/ProductCatalogApi/obj/Debug/net10.0/ProductCatalogApi.csproj.AssemblyReference.cache
+/Users/assemelmeligy/Documents/items/0xCode/mercor/task01/ProductCatalogApi/obj/Debug/net10.0/rpswa.dswa.cache.json
+/Users/assemelmeligy/Documents/items/0xCode/mercor/task01/ProductCatalogApi/obj/Debug/net10.0/ProductCatalogApi.GeneratedMSBuildEditorConfig.editorconfig
+/Users/assemelmeligy/Documents/items/0xCode/mercor/task01/ProductCatalogApi/obj/Debug/net10.0/ProductCatalogApi.AssemblyInfoInputs.cache
+/Users/assemelmeligy/Documents/items/0xCode/mercor/task01/ProductCatalogApi/obj/Debug/net10.0/ProductCatalogApi.AssemblyInfo.cs
+/Users/assemelmeligy/Documents/items/0xCode/mercor/task01/ProductCatalogApi/obj/Debug/net10.0/ProductCatalogApi.csproj.CoreCompileInputs.cache
+/Users/assemelmeligy/Documents/items/0xCode/mercor/task01/ProductCatalogApi/obj/Debug/net10.0/ProductCatalogApi.MvcApplicationPartsAssemblyInfo.cs
+/Users/assemelmeligy/Documents/items/0xCode/mercor/task01/ProductCatalogApi/obj/Debug/net10.0/ProductCatalogApi.MvcApplicationPartsAssemblyInfo.cache
