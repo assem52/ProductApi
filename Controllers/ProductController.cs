@@ -19,6 +19,8 @@ public class ProductController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Product>>> GetProducts(CancellationToken cancellationToken)
     {
+
+        
         var products = await _context.Products.AsNoTracking().ToListAsync(cancellationToken);
         return Ok(products);
     }
