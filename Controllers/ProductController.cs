@@ -27,10 +27,24 @@ public class ProductController : ControllerBase
 
         if (!string.IsNullOrWhiteSpace(search))
         {
-            
-        } 
+            query = query.Where(p => p.Name.ToLower().Contains(search.ToLower()));
+        }
+
+        query = sortBy?.ToLower() switch
+        {
+            "name" => sortOrder?.ToLower() == "desc"
+                ? query.OrderByDescending(p => p.Name)
+                : query.OrderBy(p => p.Name),
+
+            "price" => sortOrder?.ToLower() == "desc"
+            ? query.OrderByDescending(p => p.Price)
+                : query.OrderBy(p => p.Price),
+
+            _ => query
+        };
         
-        var products = await _context.Products.AsNoTracking().ToListAsync(cancellationToken);
+        var products = await query.ToListAsync();
+
         return Ok(products);
     }
 }
