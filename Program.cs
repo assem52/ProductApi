@@ -14,34 +14,44 @@ using (var scope = app.Services.CreateScope())
     var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     dbContext.Database.Migrate();
 
-    if (!dbContext.Products.Any())
+    var sampleProducts = new[]
     {
-        dbContext.Products.AddRange(
-            new ProductCatalogApi.Models.Product
-            {
-                Name = "Wireless Mouse",
-                Description = "A compact wireless mouse.",
-                Price = 24.99m,
-                Category = "Electronics",
-                StockQuantity = 50
-            },
-            new ProductCatalogApi.Models.Product
-            {
-                Name = "Mechanical Keyboard",
-                Description = "A full-size mechanical keyboard.",
-                Price = 79.99m,
-                Category = "Electronics",
-                StockQuantity = 25
-            },
-            new ProductCatalogApi.Models.Product
-            {
-                Name = "Desk Lamp",
-                Description = "An adjustable LED desk lamp.",
-                Price = 34.50m,
-                Category = "Home",
-                StockQuantity = 18
-            });
+        new ProductCatalogApi.Models.Product
+        {
+            Name = "Wireless Mouse",
+            Description = "A compact wireless mouse.",
+            Price = 24.99m,
+            Category = "Electronics",
+            StockQuantity = 50
+        },
+        new ProductCatalogApi.Models.Product
+        {
+            Name = "Mechanical Keyboard",
+            Description = "A full-size mechanical keyboard.",
+            Price = 79.99m,
+            Category = "Electronics",
+            StockQuantity = 25
+        },
+        new ProductCatalogApi.Models.Product
+        {
+            Name = "Desk Lamp",
+            Description = "An adjustable LED desk lamp.",
+            Price = 34.50m,
+            Category = "Home",
+            StockQuantity = 18
+        }
+    };
 
+    foreach (var product in sampleProducts)
+    {
+        if (!dbContext.Products.Any(existing => existing.Name == product.Name))
+        {
+            dbContext.Products.Add(product);
+        }
+    }
+
+    if (dbContext.ChangeTracker.HasChanges())
+    {
         dbContext.SaveChanges();
     }
 }

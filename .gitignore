@@ -1,4 +1,6 @@
 ## .NET build output
+bin/
+obj/
 [Bb]in/
 [Oo]bj/
 [Dd]ebug/
