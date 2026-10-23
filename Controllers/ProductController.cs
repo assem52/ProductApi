@@ -17,9 +17,18 @@ public class ProductController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Product>>> GetProducts(CancellationToken cancellationToken)
+    public async Task<ActionResult<IEnumerable<Product>>> GetProducts(CancellationToken cancellationToken, 
+    [FromQuery] string? search, 
+    [FromQuery] string? sortBy = "name",
+    [FromQuery] string? sortOrder = "asc")
     {
 
+        var query = _context.Products.AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(search))
+        {
+            
+        } 
         
         var products = await _context.Products.AsNoTracking().ToListAsync(cancellationToken);
         return Ok(products);
