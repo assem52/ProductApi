@@ -6,7 +6,7 @@ using ProductCatalogApi.Models;
 namespace ProductCatalogApi.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/Products")]
 public class ProductController : ControllerBase
 {
     private readonly ApplicationDbContext _context;
