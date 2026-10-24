@@ -18,9 +18,7 @@ public class ProductController : ControllerBase
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Product>>> GetProducts(
-        [FromQuery] string? search, 
-        [FromQuery] string? sortBy = "name",
-        [FromQuery] string? sortOrder = "asc"
+        
 )
     {
 
