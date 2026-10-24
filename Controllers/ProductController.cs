@@ -17,10 +17,9 @@ public class ProductController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Product>>> GetProducts(CancellationToken cancellationToken, 
-    [FromQuery] string? search, 
-    [FromQuery] string? sortBy = "name",
-    [FromQuery] string? sortOrder = "asc")
+    public async Task<ActionResult<IEnumerable<Product>>> GetProducts(
+        
+)
     {
 
         var query = _context.Products.AsQueryable();
