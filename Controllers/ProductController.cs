@@ -9,16 +9,22 @@ namespace ProductCatalogApi.Controllers;
 [Route("api/Products")]
 public class ProductController : ControllerBase
 {
+    string search;
+    string sortBy;
+    string sortOrder;
     private readonly ApplicationDbContext _context;
 
     public ProductController(ApplicationDbContext context)
     {
         _context = context;
+       
     }
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Product>>> GetProducts(
-        
+        [FromQuery] string? search,
+        [FromQuery] string? sortBy="name",
+        [FromQuery] string? sortOrder="asc"
 )
     {
 
